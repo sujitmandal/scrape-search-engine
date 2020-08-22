@@ -5,7 +5,7 @@ search anything on Search Engine it will collect the all the links ans save it i
 ```
 pip install scrape-search-engine
 ```
-[Package LInk](https://github.com/sujitmandal/scrape-search-engine)
+[Package LInk](https://pypi.org/project/scrape-search-engine/)
 
 ## Scrape Search Engine :
 search Anything on Search Engine it will collect the all the links ans save it into JSON file format.

@@ -1,4 +1,3 @@
-#!/bin/bash
 __author__ = 'Sujit Mandal'
 #Date : 22-08-2020
 from setuptools import setup 

@@ -1,3 +1,5 @@
+__author__ = 'Sujit Mandal'
+#Date : 22-08-2020
 import json
 import requests
 from bs4 import BeautifulSoup

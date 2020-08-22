@@ -1,5 +1,5 @@
 ## Scrape Search Engine :
-search anything on Search Engine it will collect the all the links ans save it into JSON file format.
+search anything on the Search Engine it will collect all the links and save it into JSON file format.
 
 ## Package Installation : 
 ```

@@ -1,5 +1,5 @@
 ## Scrape Search Engine :
-Search anything on the different Search Engine it will collect all the links and save it into 'json' file format.
+Search anything on the different Search Engine's it will collect all the links and save it into 'json' file format.
 
 [![Downloads](https://pepy.tech/badge/scrape-search-engine)](https://pepy.tech/project/scrape-search-engine)
 

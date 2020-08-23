@@ -1,6 +1,8 @@
 ## Scrape Search Engine :
 search anything on the Search Engine it will collect all the links and save it into JSON file format.
 
+[![Downloads](https://pepy.tech/badge/scrape-search-engine)](https://pepy.tech/project/scrape-search-engine)
+
 ## Package Installation : 
 ```
 pip install scrape-search-engine

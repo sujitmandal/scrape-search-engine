@@ -10,7 +10,7 @@ def readme():
 
 setup(
     name = 'scrape-search-engine',
-    version = '0.0.5',
+    version = '0.0.10',
     description = 'Search Anything on Search Engine it will collect the all the links ans save it into JSON file format.',
     long_description = readme(),
     long_description_content_type = 'text/markdown',

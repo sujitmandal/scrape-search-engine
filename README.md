@@ -1,7 +1,10 @@
 ## Scrape Search Engine :
-Search anything on the different Search Engine's it will collect all the links and save it into 'json' file format.
+[![Build Status](https://travis-ci.org/sujitmandal/scrape-search-engine.svg?branch=master)](https://travis-ci.org/sujitmandal/scrape-search-engine) [![GitHub license](https://img.shields.io/github/license/sujitmandal/scrape-search-engine)](https://github.com/sujitmandal/scrape-search-engine/blob/master/LICENSE) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/scrape-search-engine) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/scrape-search-engine)
+
 
 [![Downloads](https://pepy.tech/badge/scrape-search-engine)](https://pepy.tech/project/scrape-search-engine)
+
+Search anything on the different Search Engine's it will collect all the links and save it into 'json' file format.
 
 ## Package Installation : 
 ```

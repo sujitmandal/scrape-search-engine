@@ -73,6 +73,12 @@ print(comminlinks)
 ```
 ## Save into Json File formate :
 ```
+from ScrapeSearchEngine.ScrapeSearchEngine import makeJson
+
+googleJson = makeJson('google', google)
+
+print(googleJson)
+
 givewaterJson = makeJson('givewater', givewater)
 
 print(givewaterJson)

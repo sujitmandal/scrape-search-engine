@@ -29,6 +29,14 @@ google = Google(search, userAgent)
 print(google)
 
 ```
+## Duckduckgo Search Engine : 
+```
+from ScrapeSearchEngine.ScrapeSearchEngine import Duckduckgo
+
+duckduckgo = Duckduckgo(search, userAgent)
+
+print(duckduckgo)
+```
 ## Givewater Search Engine : 
 ```
 from ScrapeSearchEngine.ScrapeSearchEngine import Givewater

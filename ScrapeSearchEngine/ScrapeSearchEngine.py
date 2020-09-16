@@ -34,6 +34,20 @@ def Google(search, userAgent):
             results.append(links)
     return(results)
 
+def Duckduckgo(search , userAgent):
+    URL = ('https://duckduckgo.com/html/?q=' + search)
+    headers = {'user-agent' : userAgent}
+    request = requests.get(URL, headers=headers)
+
+    if request.status_code == 200:
+        soup = BeautifulSoup(request.content, 'html.parser')
+        results = []
+
+        for i in soup.find_all('a', attrs={'class':'result__a'}):
+            links = i['href']
+            results.append(links)
+    return(results)
+
 def Givewater(search, userAgent):
     URL = ('https://search.givewater.com/serp?q='+search)
     headers = {'user-agent' : userAgent}
@@ -97,6 +111,7 @@ def Ask(search, userAgent):
 
 def CommonLinks(search, userAgent):
     googleSearch = Google(search, userAgent)
+    duckduckgoSearch = Duckduckgo(search, userAgent)
     givewaterSearch = Givewater(search, userAgent)
     ecosiaSearch = Ecosia(search, userAgent)
     bingSearch = Bing(search, userAgent)
@@ -104,17 +119,19 @@ def CommonLinks(search, userAgent):
     
 
     googleSet = set(googleSearch)
+    duckduckgoSet = set(duckduckgoSearch)
     givewaterSet = set(givewaterSearch)
     ecosiaSet = set(ecosiaSearch)
     bingSet = set(bingSearch)
     askSet = set(askSearch)
 
     intersection1 = googleSet.intersection(givewaterSet)
-    intersection2 = intersection1.intersection(ecosiaSet)
-    intersection3 = intersection2.intersection(bingSet)
-    intersection4 = intersection3.intersection(askSet)
+    intersection2 = intersection1.intersection(duckduckgoSet)
+    intersection3 = intersection2.intersection(ecosiaSet)
+    intersection4 = intersection3.intersection(bingSet)
+    intersection5 = intersection4.intersection(askSet)
     
-    intersectionList = list(intersection4)
+    intersectionList = list(intersection5)
     finalList = []
 
     for i in intersectionList:
@@ -149,5 +166,6 @@ if __name__ == "__main__":
     Google(search, userAgent)
     Ecosia(search, userAgent)
     Givewater(search, userAgent)
+    Duckduckgo(search, userAgent)
     CommonLinks(search, userAgent)
     makeJson(name, searchEngine)

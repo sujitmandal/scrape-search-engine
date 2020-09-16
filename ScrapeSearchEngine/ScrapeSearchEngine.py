@@ -47,7 +47,7 @@ def Givewater(search, userAgent):
             link = i.find_all('a')
             links = link[0]['href']
             results.append(links)
-        return(results)
+    return(results)
 
 
 def Ecosia(search, userAgent):
@@ -93,7 +93,7 @@ def Ask(search, userAgent):
             link = i.find_all('a')
             links = link[0]['href']
             results.append(links)
-        return(results)
+    return(results)
 
 def CommonLinks(search, userAgent):
     googleSearch = Google(search, userAgent)

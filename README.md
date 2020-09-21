@@ -76,6 +76,10 @@ googleJson = makeJson('google', google)
 
 print(googleJson)
 
+duckduckgoJson = makeJson('duckduckgo', duckduckgo)
+
+print(duckduckgoJson)
+
 givewaterJson = makeJson('givewater', givewater)
 
 print(givewaterJson)
@@ -91,6 +95,8 @@ print(bingJson)
 ## Save All into Json File formate as finalJson :
 ```
 finalJson = makeJson('finalJson',googleJson)
+
+finalJson.update(duckduckgo)
 
 finalJson.update(givewaterJson)
 

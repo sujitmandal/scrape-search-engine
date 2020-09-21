@@ -94,20 +94,6 @@ def Bing(search, userAgent):
             results.append(links)
     return(results)
 
-def Ask(search, userAgent):
-    URL = ('https://www.ask.com/web?o=0&l=dir&qo=serpSearchTopBox&q='+search)
-    headers = {'user-agent' : userAgent}
-    request = requests.get(URL, headers=headers)
-
-    if request.status_code == 200:
-        soup = BeautifulSoup(request.content, 'html.parser')
-        results = []
-    
-        for i in soup.find_all('div', {'class' : 'PartialSearchResults-item-title'}):
-            link = i.find_all('a')
-            links = link[0]['href']
-            results.append(links)
-    return(results)
 
 def CommonLinks(search, userAgent):
     googleSearch = Google(search, userAgent)
@@ -115,22 +101,18 @@ def CommonLinks(search, userAgent):
     givewaterSearch = Givewater(search, userAgent)
     ecosiaSearch = Ecosia(search, userAgent)
     bingSearch = Bing(search, userAgent)
-    askSearch = Ask(search, userAgent)
-    
 
     googleSet = set(googleSearch)
     duckduckgoSet = set(duckduckgoSearch)
     givewaterSet = set(givewaterSearch)
     ecosiaSet = set(ecosiaSearch)
     bingSet = set(bingSearch)
-    askSet = set(askSearch)
 
     intersection1 = googleSet.intersection(givewaterSet)
     intersection2 = intersection1.intersection(duckduckgoSet)
     intersection3 = intersection2.intersection(ecosiaSet)
     intersection4 = intersection3.intersection(bingSet)
-    intersection5 = intersection4.intersection(askSet)
-    
+ 
     intersectionList = list(intersection5)
     finalList = []
 
@@ -161,7 +143,6 @@ def makeJson(name, searchEngine):
 
 
 if __name__ == "__main__":
-    Ask(search, userAgent)
     Bing(search, userAgent)
     Google(search, userAgent)
     Ecosia(search, userAgent)

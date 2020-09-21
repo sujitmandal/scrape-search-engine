@@ -27,7 +27,6 @@ from ScrapeSearchEngine.ScrapeSearchEngine import Google
 google = Google(search, userAgent)
 
 print(google)
-
 ```
 ## Duckduckgo Search Engine : 
 ```
@@ -44,7 +43,6 @@ from ScrapeSearchEngine.ScrapeSearchEngine import Givewater
 givewater = Givewater(search, userAgent)
 
 print(givewater)
-
 ```
 ## Ecosia Search Engine : 
 ```
@@ -62,14 +60,6 @@ bing = Bing(search, userAgent)
 
 print(bing)
 ```
-## Ask Search Engine : 
-```
-from ScrapeSearchEngine.ScrapeSearchEngine import Ask
-
-ask = Ask(search, userAgent)
-
-print(ask)
-```
 ## CommonLinks Search Engine : 
 ```
 from ScrapeSearchEngine.ScrapeSearchEngine import CommonLinks
@@ -77,7 +67,6 @@ from ScrapeSearchEngine.ScrapeSearchEngine import CommonLinks
 comminlinks = CommonLinks(search, userAgent)
 
 print(comminlinks)
-
 ```
 ## Save into Json File formate :
 ```
@@ -98,11 +87,6 @@ print(ecosiaJson)
 bingJson = makeJson('bing', bing)
 
 print(bingJson)
-
-askJson = makeJson('ask', ask)
-
-print(askJson)
-
 ```
 ## Save All into Json File formate as finalJson :
 ```
@@ -114,10 +98,9 @@ finalJson.update(ecosiaJson)
 
 finalJson.update(bingJson)
 
-finalJson.update(askJson)
-
 print(finalJson)
 ```
+
 
 ## Requirement’s:
 ```

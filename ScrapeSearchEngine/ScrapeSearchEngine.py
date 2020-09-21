@@ -113,7 +113,7 @@ def CommonLinks(search, userAgent):
     intersection3 = intersection2.intersection(ecosiaSet)
     intersection4 = intersection3.intersection(bingSet)
  
-    intersectionList = list(intersection5)
+    intersectionList = list(intersection4)
     finalList = []
 
     for i in intersectionList:

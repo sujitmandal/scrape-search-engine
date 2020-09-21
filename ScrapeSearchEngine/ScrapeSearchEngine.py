@@ -138,6 +138,10 @@ def makeJson(name, searchEngine):
 
     Dictionary = {}
     Dictionary[name] = dict(zip(keys, searchEngine))
+
+    with open(name + '.json', 'w') as j:
+        json.dump(Dictionary, j)
+    print(name + ' File Saved')
     return(Dictionary)
 
 

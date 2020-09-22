@@ -94,6 +94,20 @@ def Bing(search, userAgent):
             results.append(links)
     return(results)
 
+def Yahoo(search, userAgent):
+    URL = ('https://search.yahoo.com/search?q=' + search)
+    headers = {'user-agent' : userAgent}
+    request = requests.get(URL, headers=headers)
+
+    if request.status_code == 200:
+        soup = BeautifulSoup(request.content, 'html.parser')
+        results = []
+    
+        for i in soup.find_all('div', {'class' : 'compTitle options-toggle'}):
+            link = i.find_all('a')
+            links = link[0]['href']
+            results.append(links)
+    return(results)
 
 def CommonLinks(search, userAgent):
     googleSearch = Google(search, userAgent)
@@ -148,6 +162,7 @@ def makeJson(name, searchEngine):
 
 if __name__ == "__main__":
     Bing(search, userAgent)
+    Yahoo(search, userAgent)
     Google(search, userAgent)
     Ecosia(search, userAgent)
     Givewater(search, userAgent)

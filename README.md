@@ -60,6 +60,14 @@ bing = Bing(search, userAgent)
 
 print(bing)
 ```
+## Yahoo Search Engine : 
+```
+from ScrapeSearchEngine.ScrapeSearchEngine import Yahoo
+
+yahoo = Yahoo(search, userAgent)
+
+print(yahoo)
+```
 ## CommonLinks Search Engine : 
 ```
 from ScrapeSearchEngine.ScrapeSearchEngine import CommonLinks

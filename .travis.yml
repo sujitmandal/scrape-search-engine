@@ -1,7 +1,7 @@
 language: python
-lhlyllc
+
 python:
-  - 2.7 dhdh
+  - 2.7 
   - 3.5
   - 3.6
   - 3.7

@@ -28,7 +28,7 @@ def Google(search, userAgent):
         soup = BeautifulSoup(request.content, 'html.parser')
         results = []
     
-        for i in soup.find_all('div', {'class' : 'r'}):
+        for i in soup.find_all('div', {'class' : 'yuRUbf'}):
             link = i.find_all('a')
             links = link[0]['href']
             results.append(links)

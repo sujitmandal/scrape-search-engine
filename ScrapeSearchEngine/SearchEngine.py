@@ -24,12 +24,16 @@ def Google(search, userAgent):
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, 'html.parser')
         results = []
+        texts = []
     
         for i in soup.find_all('div', {'class' : 'yuRUbf'}):
             link = i.find_all('a')
+            link_text = i.find('h3')
             links = link[0]['href']
             results.append(links)
-    return(results)
+            texts.append(link_text.text)
+
+    return(texts, results)
 
 def Duckduckgo(search , userAgent):
     URL = ('https://duckduckgo.com/html/?q=' + search)
@@ -39,27 +43,14 @@ def Duckduckgo(search , userAgent):
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, 'html.parser')
         results = []
+        texts = []
 
         for i in soup.find_all('a', attrs={'class':'result__a'}):
             links = i['href']
             results.append(links)
-    return(results)
+            texts.append(i.text)
 
-def Givewater(search, userAgent):
-    URL = ('https://search.givewater.com/serp?q='+search)
-    headers = {'user-agent' : userAgent}
-    request = requests.get(URL, headers=headers)
-
-    if request.status_code == 200:
-        soup = BeautifulSoup(request.content, 'html.parser')
-        results = []
-
-        for i in soup.find_all('div', {'class' : 'web-bing__result'}):
-            link = i.find_all('a')
-            links = link[0]['href']
-            results.append(links)
-    return(results)
-
+    return(texts, results)
 
 def Ecosia(search, userAgent):
     URL = ('https://www.ecosia.org/search?q='+search)
@@ -69,12 +60,16 @@ def Ecosia(search, userAgent):
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, 'html.parser')
         results = []
+        texts = []
 
         for i in soup.find_all('div', {'class' : 'result-firstline-container'}):
             link = i.find_all('a')
+            link_text = i.find('a')
             links = link[0]['href']
             results.append(links)
-    return(results)
+            texts.append(link_text.text)
+    
+    return(texts, results)
 
 def Bing(search, userAgent):
     URL = ('https://www.bing.com/search?q='+search)
@@ -84,12 +79,35 @@ def Bing(search, userAgent):
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, "html.parser")
         results = []
+        texts = []
     
         for i in soup.find_all('li', {'class' : 'b_algo'}):
             link = i.find_all('a')
+            link_text = i.find('a')
             links = link[0]['href']
             results.append(links)
-    return(results)
+            texts.append(link_text.text)
+        
+    return(texts, results)
+
+def Givewater(search, userAgent):
+    URL = ('https://search.givewater.com/serp?q='+search)
+    headers = {'user-agent' : userAgent}
+    request = requests.get(URL, headers=headers)
+
+    if request.status_code == 200:
+        soup = BeautifulSoup(request.content, 'html.parser')
+        results = []
+        texts = []
+
+        for i in soup.find_all('div', {'class' : 'web-bing__result'}):
+            link = i.find_all('a')
+            link_text = i.find('a')
+            links = link[0]['href']
+            results.append(links)
+            texts.append(link_text.text)
+
+    return(texts, results)
 
 def Yahoo(search, userAgent):
     URL = ('https://search.yahoo.com/search?q=' + search)
@@ -98,12 +116,13 @@ def Yahoo(search, userAgent):
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, 'html.parser')
         results = []
+        texts = []
     
         for i in soup.find_all(attrs={"class": "ac-algo fz-l ac-21th lh-24"}):
-            link = i.get('href')
-            results.append(link)
+            results.append(i.get('href'))
+            texts.append(i.text)
 
-    return(results)
+    return(texts, results)
 
 if __name__ == "__main__":
     Bing(search, userAgent)

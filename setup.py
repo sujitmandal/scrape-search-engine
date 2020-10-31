@@ -10,8 +10,8 @@ def readme():
 
 setup(
     name = 'scrape-search-engine',
-    version = '0.0.10',
-    description = 'Search Anything on Search Engine it will collect the all the links ans save it into JSON file format.',
+    version = '0.1.7',
+    description = "Search anything on the different Search Engine's it will collect all the links and save it into 'json' file format.",
     long_description = readme(),
     long_description_content_type = 'text/markdown',
     url = 'https://github.com/sujitmandal/scrape-search-engine',
@@ -19,9 +19,10 @@ setup(
     author_email = 'mandals974@gmail.com',
     license = 'MIT',
     classifiers = [
-  'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.0',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',

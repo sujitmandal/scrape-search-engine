@@ -4,16 +4,8 @@
 
 [![Downloads](https://pepy.tech/badge/scrape-search-engine)](https://pepy.tech/project/scrape-search-engine)
 
-Search anything on the different Search Engine's it will collect all the links and save it into 'json' file format.
 
-## Package Installation : 
-```
-pip install scrape-search-engine
-```
-[Package Link](https://pypi.org/project/scrape-search-engine/)
-
-## Scrape Search Engine :
-search Anything on Search Engine it will collect the all the links ans save it into JSON file format.
+Search anything on the different Search Engine's it will collect all the links.
 
 ## How to import the module:
 ```
@@ -68,53 +60,64 @@ yahoo = Yahoo(search, userAgent)
 
 print(yahoo)
 ```
-## CommonLinks Search Engine : 
+## Scrape Search Engine With Text and Link :
+
+Search anything on the different Search Engine's it will collect all the links with corresponding text.
+
+## Google Search Engine : 
 ```
-from ScrapeSearchEngine.ScrapeSearchEngine import CommonLinks
+from ScrapeSearchEngine.SearchEngine import Google
 
-comminlinks = CommonLinks(search, userAgent)
+googleText, googleLink = Google(search, userAgent)
 
-print(comminlinks)
+print(googleText)
+print(googleLink)
 ```
-## Save into Json File formate :
+## Duckduckgo Search Engine : 
 ```
-from ScrapeSearchEngine.ScrapeSearchEngine import makeJson
+from ScrapeSearchEngine.SearchEngine import Duckduckgo
 
-googleJson = makeJson('google', google)
+duckduckgoText, duckduckgoLink = Duckduckgo(search, userAgent)
 
-print(googleJson)
-
-duckduckgoJson = makeJson('duckduckgo', duckduckgo)
-
-print(duckduckgoJson)
-
-givewaterJson = makeJson('givewater', givewater)
-
-print(givewaterJson)
-
-ecosiaJson = makeJson('ecosia', ecosia)
-
-print(ecosiaJson)
-
-bingJson = makeJson('bing', bing)
-
-print(bingJson)
+print(duckduckgoText)
+print(duckduckgoLink)
 ```
-## Save All into Json File formate as finalJson :
+## Givewater Search Engine : 
 ```
-finalJson = makeJson('finalJson',googleJson)
+from ScrapeSearchEngine.SearchEngine import Givewater
 
-finalJson.update(duckduckgo)
+givewaterText, givewaterLink = Givewater(search, userAgent)
 
-finalJson.update(givewaterJson)
-
-finalJson.update(ecosiaJson)
-
-finalJson.update(bingJson)
-
-print(finalJson)
+print(givewaterText)
+print(givewaterLink)
 ```
+## Ecosia Search Engine : 
+```
+from ScrapeSearchEngine.SearchEngine import Ecosia
 
+ecosiaText, ecosiaLink = Ecosia(search, userAgent)
+
+print(ecosiaText)
+print(ecosiaLink)
+```
+## Bing Search Engine : 
+```
+from ScrapeSearchEngine.SearchEngine import Bing
+
+bingText, bingLink = Bing(search, userAgent)
+
+print(bingText)
+print(bingLink)
+```
+## Yahoo Search Engine : 
+```
+from ScrapeSearchEngine.SearchEngine import Yahoo
+
+yahooText, yahooLink = Yahoo(search, userAgent)
+
+print(yahooText)
+print(yahooLink)
+```
 
 ## Requirement’s:
 ```
@@ -141,8 +144,6 @@ How to install | Python | | Anaconda | | Opencv library |
 
 ## Installing the required package’s:
 ```
-• pip install BeautifulSoup
-
 • pip install requests
 
 • pip install bs4

@@ -7,6 +7,12 @@
 
 Search anything on the different Search Engine's it will collect all the links.
 
+## Package Installation  : 
+```
+pip install scrape-search-engine
+```
+[Package Link](https://pypi.org/project/scrape-search-engine/)
+
 ## How to import the module:
 ```
 userAgent = ('') #search on google "my user agent"

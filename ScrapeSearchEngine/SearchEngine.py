@@ -60,7 +60,7 @@ def Ecosia(search, userAgent):
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, 'html.parser')
         results = []
-         text = []
+        text = []
 
         for i in soup.find_all('div', {'class' : 'result-firstline-container'}):
             link = i.find_all('a')

@@ -210,7 +210,7 @@ def Yahoo(search, userAgent):
         results.append('HTTP Status : {}'.format(httpResponseStatusCodes.get(request.status_code)))
         texts.append('HTTP Status : {}'.format(httpResponseStatusCodes.get(request.status_code)))
 
-    return(texts, results
+    return(texts, results)
 
 if __name__ == "__main__":
     Bing(search, userAgent)

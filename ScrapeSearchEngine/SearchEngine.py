@@ -10,11 +10,8 @@ LinkedIn : https://www.linkedin.com/in/sujit-mandal-91215013a/
 """
 
 #search on google "my user agent"
-#USER_AGENT = ('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36')
-#search = ('')
-
-userAgent = ('') #my user agent
-search = ('') #Enter Anything for Search
+# userAgent = ('') #my user agent
+# search = ('') #Enter Anything for Search
 
 httpResponseStatusCodes = {
     100 : 'Continue',

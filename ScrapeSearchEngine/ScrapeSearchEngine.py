@@ -16,19 +16,89 @@ LinkedIn : https://www.linkedin.com/in/sujit-mandal-91215013a/
 userAgent = ('') #my user agent
 search = ('') #Enter Anything for Search
 
+httpResponseStatusCodes = {
+    100 : 'Continue',
+    101 : 'Switching Protocol',
+    102 : 'Processing (WebDAV)',
+    103 : 'Early Hints',
+    201 : 'Created',
+    202 : 'Accepted',
+    203 : 'Non-Authoritative Information',
+    204 : ' No Content',
+    205 : 'Reset Content',
+    206 : 'Partial Content',
+    207 : 'Multi-Status (WebDAV)',
+    208 : 'Already Reported (WebDAV)',
+    226 : 'IM Used (HTTP Delta encoding)',
+    300 : 'Multiple Choice',
+    301 : 'Moved Permanently',
+    203 : 'Found',
+    303 : 'See Other',
+    304 : 'Not Modified',
+    305 : 'Use Proxy',
+    306 : 'unused',
+    307 : 'Temporary Redirect',
+    308 : 'Permanent Redirect',
+    400 : 'Bad Request',
+    401 : 'Unauthorized',
+    402 : 'Payment Required',
+    403 : 'Forbidden',
+    404 : 'Not Found',
+    405 : 'Method Not Allowed',
+    406 : 'Not Acceptable',
+    407 : 'Proxy Authentication Required',
+    408 : 'Request Timeout',
+    409 : 'Conflict',
+    410 : 'Gone',
+    411 : 'Length Required',
+    412 : 'Precondition Failed',
+    413 : 'Payload Too Large',
+    414 : 'URI Too Long',
+    415 : 'Unsupported Media Type',
+    416 : 'Range Not Satisfiable',
+    417 : 'Expectation Failed',
+    418 : 'I am a teapot',
+    421 : 'Misdirected Request',
+    422 : 'Unprocessable Entity (WebDAV)',
+    423 : 'Locked (WebDAV)',
+    424 : 'Failed Dependency (WebDAV)',
+    425 : 'Too Early',
+    426 : 'Upgrade Required',
+    428 : 'Precondition Required',
+    429 : 'Too Many Requests',
+    431 : 'Request Header Fields Too Large',
+    451 : 'Unavailable For Legal Reasons',
+    500 : 'Internal Server Error',
+    501 : 'Not Implemented',
+    502 : 'Bad Gateway',
+    503 : 'Service Unavailable',
+    504 : 'Gateway Timeout',
+    505 : 'HTTP Version Not Supported',
+    506 : 'Variant Also Negotiates',
+    507 : 'Insufficient Storage (WebDAV)',
+    508 : 'Loop Detected (WebDAV)',
+    510 : 'Not Extended',
+    511 : 'Network Authentication Required'
+}
+
+
 def Google(search, userAgent):
     URL = ('https://google.com/search?q=' + search)
     headers = {'user-agent' : userAgent}
     request = requests.get(URL, headers=headers)
 
+    results = []
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, 'html.parser')
-        results = []
-    
+       
         for i in soup.find_all('div', {'class' : 'yuRUbf'}):
             link = i.find_all('a')
             links = link[0]['href']
             results.append(links)
+    else:
+        print('HTTP Response Status For Google : {}'.format(httpResponseStatusCodes.get(request.status_code)))
+        results.append('HTTP Status : {}'.format(httpResponseStatusCodes.get(request.status_code)))
+
     return(results)
 
 def Duckduckgo(search , userAgent):
@@ -36,13 +106,17 @@ def Duckduckgo(search , userAgent):
     headers = {'user-agent' : userAgent}
     request = requests.get(URL, headers=headers)
 
+    results = []
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, 'html.parser')
-        results = []
 
         for i in soup.find_all('a', attrs={'class':'result__a'}):
             links = i['href']
             results.append(links)
+    else:
+        print('HTTP Response Status For Duckduckgo : {}'.format(httpResponseStatusCodes.get(request.status_code)))
+        results.append('HTTP Status : {}'.format(httpResponseStatusCodes.get(request.status_code)))
+
     return(results)
 
 def Givewater(search, userAgent):
@@ -50,30 +124,37 @@ def Givewater(search, userAgent):
     headers = {'user-agent' : userAgent}
     request = requests.get(URL, headers=headers)
 
+    results = []
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, 'html.parser')
-        results = []
 
         for i in soup.find_all('div', {'class' : 'web-bing__result'}):
             link = i.find_all('a')
             links = link[0]['href']
             results.append(links)
-    return(results)
+    else:
+        print('HTTP Response Status For Givewater : {}'.format(httpResponseStatusCodes.get(request.status_code)))
+        results.append('HTTP Status : {}'.format(httpResponseStatusCodes.get(request.status_code)))
 
+    return(results)
 
 def Ecosia(search, userAgent):
     URL = ('https://www.ecosia.org/search?q='+search)
     headers = {'user-agent' : userAgent}
     request = requests.get(URL, headers=headers)
 
+    results = []
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, 'html.parser')
-        results = []
-
+       
         for i in soup.find_all('div', {'class' : 'result-firstline-container'}):
             link = i.find_all('a')
             links = link[0]['href']
             results.append(links)
+    else:
+        print('HTTP Response Status For Ecosia : {}'.format(httpResponseStatusCodes.get(request.status_code)))
+        results.append('HTTP Status : {}'.format(httpResponseStatusCodes.get(request.status_code)))
+
     return(results)
 
 def Bing(search, userAgent):
@@ -81,28 +162,35 @@ def Bing(search, userAgent):
     headers = {'user-agent' : userAgent}
     request = requests.get(URL, headers=headers)
 
+    results = []
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, "html.parser")
-        results = []
-    
+
         for i in soup.find_all('li', {'class' : 'b_algo'}):
             link = i.find_all('a')
             links = link[0]['href']
             results.append(links)
+    else:
+        print('HTTP Response Status For Bing : {}'.format(httpResponseStatusCodes.get(request.status_code)))
+        results.append('HTTP Status : {}'.format(httpResponseStatusCodes.get(request.status_code)))
+
     return(results)
 
 def Yahoo(search, userAgent):
     URL = ('https://search.yahoo.com/search?q=' + search)
     request = requests.get(URL)
 
+    results = []
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, 'html.parser')
-        results = []
     
         for i in soup.find_all(attrs={"class": "ac-algo fz-l ac-21th lh-24"}):
             link = i.get('href')
             results.append(link)
-
+    else:
+        print('HTTP Response Status For Yahoo : {}'.format(httpResponseStatusCodes.get(request.status_code)))
+        results.append('HTTP Status : {}'.format(httpResponseStatusCodes.get(request.status_code)))
+        
     return(results)
 
 if __name__ == "__main__":

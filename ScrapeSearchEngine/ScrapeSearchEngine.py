@@ -181,7 +181,7 @@ def Yahoo(search, userAgent):
     if request.status_code == 200:
         soup = BeautifulSoup(request.content, 'html.parser')
     
-        for i in soup.find_all(attrs={"class": "ac-algo fz-l ac-21th lh-24"}):
+        for i in soup.find_all(attrs={"class": "d-ib ls-05 fz-20 lh-26 td-hu tc va-bot mxw-100p"}):
             link = i.get('href')
             results.append(link)
     else:

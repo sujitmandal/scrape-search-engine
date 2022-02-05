@@ -20,6 +20,9 @@ conda install -c conda-forge scrape-search-engine
 [Conda Package Link](https://anaconda.org/conda-forge/scrape-search-engine)
 
 
+[scrape-search-engine-feedstock](https://github.com/conda-forge/scrape-search-engine-feedstock)
+
+
 ## How to import the module:
 ```python
 userAgent = ('') #search on google "my user agent"

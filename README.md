@@ -1,5 +1,6 @@
 ## Scrape Search Engine :
-[![Build Status](https://travis-ci.org/sujitmandal/scrape-search-engine.svg?branch=master)](https://travis-ci.org/sujitmandal/scrape-search-engine) [![GitHub license](https://img.shields.io/github/license/sujitmandal/scrape-search-engine)](https://github.com/sujitmandal/scrape-search-engine/blob/master/LICENSE) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/scrape-search-engine) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/scrape-search-engine) ![PyPI](https://img.shields.io/pypi/v/scrape-search-engine)
+[![Build Status](https://travis-ci.org/sujitmandal/scrape-search-engine.svg?branch=master)](https://travis-ci.org/sujitmandal/scrape-search-engine) [![GitHub license](https://img.shields.io/github/license/sujitmandal/scrape-search-engine)](https://github.com/sujitmandal/scrape-search-engine/blob/master/LICENSE) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/scrape-search-engine) ![PyPI - Wheel](https://img.shields.io/pypi/wheel/scrape-search-engine) ![PyPI](https://img.shields.io/pypi/v/scrape-search-engine) [![Anaconda-Server Badge](https://anaconda.org/conda-forge/scrape-search-engine/badges/version.svg)](https://anaconda.org/conda-forge/scrape-search-engine) [![Anaconda-Server Badge](https://anaconda.org/conda-forge/scrape-search-engine/badges/installer/conda.svg)](https://conda.anaconda.org/conda-forge) [![Anaconda-Server Badge](https://anaconda.org/conda-forge/scrape-search-engine/badges/platforms.svg)](https://anaconda.org/conda-forge/scrape-search-engine)
+
 
 
 [![Downloads](https://pepy.tech/badge/scrape-search-engine)](https://pepy.tech/project/scrape-search-engine)
@@ -11,7 +12,13 @@ Search anything on the different Search Engine's it will collect all the links.
 ```
 pip install scrape-search-engine
 ```
-[Package Link](https://pypi.org/project/scrape-search-engine/)
+[Pypi Package Link](https://pypi.org/project/scrape-search-engine/)
+
+```
+conda install -c conda-forge scrape-search-engine
+```
+[Conda Package Link](https://anaconda.org/conda-forge/scrape-search-engine)
+
 
 ## How to import the module:
 ```python

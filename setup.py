@@ -3,7 +3,7 @@ __author__ = 'Sujit Mandal'
 from setuptools import setup 
 
 def readme():
-    with open('README.md', encoding="utf-8") as files:
+    with open('README.md') as files:
         README = files.read()
 
     return(README)
